@@ -262,6 +262,57 @@ details.rq summary .st{font-size:.7rem;font-weight:800;white-space:nowrap}
 .exp .kn,.exp2 .kn{margin-top:8px;padding-top:8px;border-top:1px dashed var(--card-border)}
 .rbody .rq-q .kn{font-weight:600;margin-top:6px}
 .pdfnote{font-size:.7rem;color:var(--muted);margin-top:6px}
+
+/* ===== v2 interface polish (same brand colours) ===== */
+body{background:
+  radial-gradient(900px 420px at 85% -80px, rgba(140,158,255,.16), transparent 70%),
+  radial-gradient(700px 380px at -10% 20%, rgba(255,107,115,.10), transparent 70%),
+  var(--bg);background-attachment:fixed}
+.topbar{position:sticky;top:0;z-index:30;background:rgba(11,16,32,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--card-border)}
+.topbar .in{max-width:760px;margin:0 auto;padding:9px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.back{display:inline-flex;align-items:center;gap:6px;color:var(--accent);text-decoration:none;font-weight:800;font-size:.76rem;letter-spacing:.4px;border:1px solid var(--accent);border-radius:999px;padding:7px 14px;white-space:nowrap;transition:background .2s,color .2s}
+.back:hover{background:var(--accent);color:var(--dark)}
+.tb-mid{font-weight:800;color:#fff;font-size:.84rem}
+.tb-r{font-size:.74rem;color:var(--muted);font-weight:700;white-space:nowrap}
+.tb-r b{color:var(--good)}
+.hero{margin-top:22px;padding:20px 20px 18px;border-radius:16px;border:1px solid var(--card-border);
+  background:linear-gradient(135deg,rgba(140,158,255,.16),rgba(255,107,115,.08) 70%),var(--card);box-shadow:0 10px 30px rgba(0,0,0,.28)}
+.hero h1{margin:0 0 8px}
+.chip{transition:transform .15s,border-color .2s}
+.chip:hover{transform:translateY(-1px);border-color:var(--accent)}
+.bar{height:8px}
+.bar>i{background:linear-gradient(90deg,var(--accent),var(--coral));border-radius:99px;box-shadow:0 0 12px rgba(255,107,115,.5)}
+.pal{box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.pb{border-radius:10px;transition:transform .12s,background .2s,border-color .2s,box-shadow .2s}
+.pb.ans{box-shadow:0 0 0 1px rgba(76,217,160,.4) inset}
+.pb.cur{background:var(--coral);color:var(--dark);outline:0;box-shadow:0 0 14px rgba(255,107,115,.6)}
+.qcard{border-radius:16px;box-shadow:0 14px 36px rgba(0,0,0,.35);background:linear-gradient(180deg,#171d3c,var(--card))}
+.qcard.swap{animation:swapIn .28s ease}
+@keyframes swapIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.opt{border-radius:12px;padding:14px 16px;background:linear-gradient(180deg,#11173a,#0f1431)}
+.opt:hover:not(:disabled){border-color:var(--accent);box-shadow:0 0 0 3px rgba(140,158,255,.15);transform:translateY(-2px)}
+.opt .k{width:34px;height:34px;background:linear-gradient(135deg,#2d3563,#262d52);color:#fff;font-size:.85rem}
+.opt:hover:not(:disabled) .k{background:var(--accent);color:var(--dark)}
+.opt.correct{box-shadow:0 0 0 3px rgba(76,217,160,.18)}
+.opt.wrong{box-shadow:0 0 0 3px rgba(255,107,115,.18)}
+.exp{border-radius:12px;animation:swapIn .3s ease}
+.nbtn,.submit,.retry,.btn{border-radius:12px}
+.nbtn.nxt,.retry:not(.alt){background:linear-gradient(135deg,var(--coral),#ff8a6b);box-shadow:0 6px 16px rgba(255,107,115,.25)}
+.nbtn.nxt:hover:not(:disabled),.retry:not(.alt):hover{background:linear-gradient(135deg,var(--coral-hover),#ff9c80)}
+.submit{background:linear-gradient(135deg,var(--accent),#a9b8ff);box-shadow:0 6px 16px rgba(140,158,255,.25)}
+.tag{box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.score{border-radius:16px;box-shadow:0 14px 36px rgba(0,0,0,.35);background:linear-gradient(180deg,#171d3c,var(--card))}
+.ring{--p:0;width:190px;height:190px;border-radius:50%;margin:4px auto 12px;display:grid;place-items:center;
+  background:conic-gradient(var(--good) calc(var(--p)*1%), #262d52 0);box-shadow:0 0 30px rgba(76,217,160,.18)}
+.ringin{width:154px;height:154px;border-radius:50%;background:var(--card);display:grid;place-content:center;text-align:center;padding:6px}
+.ringin .net{font-size:1.7rem;line-height:1.1}
+.grade{font-weight:800;color:#fff;font-size:1.05rem;margin-top:2px}
+.kpi,.sec,.review{border-radius:14px}
+.kpi{background:linear-gradient(180deg,#171d3c,var(--card))}
+.mbox{border-radius:16px}
+.backwide{display:block;text-align:center;text-decoration:none;margin-top:14px;border:1px solid var(--accent);color:var(--accent);background:transparent;font-weight:800;font-size:.8rem;letter-spacing:.6px;padding:14px 10px;border-radius:12px;transition:background .2s,color .2s}
+.backwide:hover{background:var(--accent);color:var(--dark)}
+@media (max-width:560px){.topbar .in{padding:8px 14px}.tb-mid{display:none}.hero{padding:16px 14px}}
 </style>
 </head>
 <body>
@@ -275,6 +326,11 @@ details.rq summary .st{font-size:.7rem;font-weight:800;white-space:nowrap}
   </div>
 </header>
 <hr class="rule">
+<div class="topbar"><div class="in">
+  <a class="back" id="backTop" data-back href="index.html">&larr; ALL TESTS / <span class="kn">ಎಲ್ಲಾ ಪರೀಕ್ಷೆಗಳು</span></a>
+  <span class="tb-mid" id="tbq">Q 1 / 30</span>
+  <span class="tb-r"><b id="tbA">0</b> answered &bull; &#9201; <span id="tbT">00:00</span></span>
+</div></div>
 
 <main class="wrap">
 
@@ -283,6 +339,7 @@ details.rq summary .st{font-size:.7rem;font-weight:800;white-space:nowrap}
     <a class="tg-btn" href="https://t.me/karnatakaeExamseries" target="_blank" rel="noopener">JOIN TELEGRAM</a>
   </section>
 
+  <div class="hero">
   <h1>TEST 1 (FREE): KARNATAKA POLITICAL, PHYSICAL &amp; GEOLOGICAL HERITAGE</h1>
   <p class="sub">ಕನ್ನಡ + English (bilingual) &bull; 30 map-based MCQs &bull; Moderate-to-Difficult, KEA / KPSC FDA & SDA standard. / ಮಧ್ಯಮ–ಕಠಿಣ ಮಟ್ಟ. Study the pins and highlighted districts on each map, then choose the correct answer.</p>
   <div class="chips">
@@ -290,6 +347,7 @@ details.rq summary .st{font-size:.7rem;font-weight:800;white-space:nowrap}
     <span class="chip">Wrong <b>&minus;0.25</b></span>
     <span class="chip">Skipped <b>0</b></span>
     <span class="chip">Maximum <b>30</b> marks</span>
+  </div>
   </div>
 
   <div id="quiz">
@@ -322,9 +380,10 @@ details.rq summary .st{font-size:.7rem;font-weight:800;white-space:nowrap}
 
   <section class="result" id="result">
     <div class="score">
-      <div class="of" style="margin:0 0 8px">NET SCORE</div>
-      <div class="net" id="scoreBig">0</div>
+      <div class="ring" id="ring"><div class="ringin"><div class="of" style="margin:0 0 4px">NET SCORE</div><div class="net" id="scoreBig">0</div></div></div>
+      <div class="grade" id="grade"></div>
       <div class="of" id="scoreOf"></div>
+      <div class="of" id="timeTaken"></div>
     </div>
     <div class="kpis" id="kpis"></div>
     <div class="sections" id="sections"></div>
@@ -335,6 +394,7 @@ details.rq summary .st{font-size:.7rem;font-weight:800;white-space:nowrap}
       <div id="review"></div>
     </div>
     <div class="pdfnote" style="margin-top:14px">PDF is created inside your own browser and saved on your device. Nothing is uploaded. / PDF ನಿಮ್ಮ ಬ್ರೌಸರ್‌ನಲ್ಲಿಯೇ ತಯಾರಾಗಿ ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಉಳಿಯುತ್ತದೆ.</div>
+    <a class="backwide" data-back href="index.html">&larr; BACK TO ALL TESTS / ಎಲ್ಲಾ ಪರೀಕ್ಷೆಗಳಿಗೆ ಹಿಂತಿರುಗಿ</a>
     <div class="rbtns">
       <button class="retry alt" id="pdf2" type="button">&#11015; DOWNLOAD TEST REPORT (PDF) / ಪರೀಕ್ಷಾ ವರದಿ PDF</button>
       <button class="retry" id="retry" type="button">TRY AGAIN</button>
@@ -350,6 +410,17 @@ details.rq summary .st{font-size:.7rem;font-weight:800;white-space:nowrap}
     <div class="mrow">
       <button class="nbtn prev" id="mno" type="button">GO BACK</button>
       <button class="nbtn nxt" id="myes" type="button">SUBMIT</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="leave">
+  <div class="mbox">
+    <h3>Leave this test?</h3>
+    <p>Your answers so far will be lost. / ನಿಮ್ಮ ಈವರೆಗಿನ ಉತ್ತರಗಳು ಅಳಿಸಿಹೋಗುತ್ತವೆ.</p>
+    <div class="mrow">
+      <button class="nbtn prev" id="lstay" type="button">STAY</button>
+      <button class="nbtn nxt" id="lgo" type="button">LEAVE</button>
     </div>
   </div>
 </div>
@@ -776,6 +847,7 @@ function updatePalette(){
     b.className = "pb" + (done ? " ans" : "") + (i===idx ? " cur" : "");
   }
   $("cA").textContent = a; $("cU").textContent = TOTAL - a;
+  $("tbA").textContent = a; $("tbq").textContent = "Q " + (idx+1) + " / " + TOTAL;
   $("fill").style.width = (a / TOTAL * 100) + "%";
 }
 
@@ -787,6 +859,7 @@ function renderExp(i){
 
 function show(){
   const q = QUESTIONS[idx];
+  { const c = document.querySelector(".qcard"); c.classList.remove("swap"); void c.offsetWidth; c.classList.add("swap"); }
   $("qno").textContent = "Question " + (idx+1) + " / " + TOTAL;
   $("sec").textContent = q.sec;
   $("kind").style.display = q.kind ? "" : "none";
@@ -853,7 +926,7 @@ $("myes").addEventListener("click", ()=>{ $("modal").classList.remove("show"); f
 function fmt(n){ return (Math.round(n*100)/100).toFixed(2); }
 
 function finish(){
-  submitted = true;
+  submitted = true; tEnd = Date.now();
   $("quiz").style.display = "none";
   let c = 0, w = 0, s = 0;
   const sec = {};
@@ -868,6 +941,9 @@ function finish(){
   const att = c + w;
   const acc = att ? (c/att*100) : 0;
   $("scoreBig").textContent = fmt(net) + " / " + TOTAL;
+  { const pct = Math.max(0, net) / TOTAL * 100; $("ring").style.setProperty("--p", pct.toFixed(1));
+    $("grade").textContent = pct >= 75 ? "Excellent! / ಅತ್ಯುತ್ತಮ!" : pct >= 50 ? "Good effort / ಒಳ್ಳೆಯ ಪ್ರಯತ್ನ" : pct >= 25 ? "Keep practising / ಅಭ್ಯಾಸ ಮುಂದುವರಿಸಿ" : "Study the explanations below / ಕೆಳಗಿನ ವಿವರಣೆಗಳನ್ನು ಓದಿ";
+    $("timeTaken").textContent = "Time taken / ತೆಗೆದುಕೊಂಡ ಸಮಯ: " + clock(tEnd - t0); $("tbq").textContent = "RESULT"; }
   $("scoreOf").textContent = "Accuracy " + (Math.round(acc*10)/10) + "% (correct ÷ attempted) • +1 / −0.25 / 0 marking";
   $("kpis").innerHTML =
     '<div class="kpi g"><div class="n">'+c+'</div><div class="l">CORRECT (+'+c+')</div></div>'+
@@ -926,7 +1002,7 @@ function applyFilter(f){
 document.querySelectorAll("#flt button").forEach(b=>b.addEventListener("click", ()=>applyFilter(b.dataset.f)));
 
 $("retry").addEventListener("click", ()=>{
-  idx = 0; picks = new Array(TOTAL).fill(null); submitted = false;
+  t0 = Date.now(); tEnd = null; idx = 0; picks = new Array(TOTAL).fill(null); submitted = false;
   $("result").classList.remove("show");
   $("quiz").style.display = "";
   show();
@@ -1170,6 +1246,14 @@ async function downloadPDF(){
 }
 $("pdf2").addEventListener("click", downloadPDF);
 
+let t0 = Date.now(), tEnd = null;
+function clock(ms){ const s = Math.floor(ms/1000), m = Math.floor(s/60); return String(m).padStart(2,"0") + ":" + String(s%60).padStart(2,"0"); }
+setInterval(()=>{ if (!submitted) $("tbT").textContent = clock(Date.now() - t0); else if (tEnd) $("tbT").textContent = clock(tEnd - t0); }, 1000);
+document.querySelectorAll("[data-back]").forEach(a=>a.addEventListener("click", e=>{
+  if (!submitted && picks.some(x=>x !== null)){ e.preventDefault(); $("leave").classList.add("show"); }
+}));
+$("lstay").addEventListener("click", ()=>$("leave").classList.remove("show"));
+$("lgo").addEventListener("click", ()=>{ location.href = "index.html"; });
 buildPalette();
 show();
 
